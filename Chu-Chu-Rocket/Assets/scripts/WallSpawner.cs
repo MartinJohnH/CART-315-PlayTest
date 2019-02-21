@@ -34,7 +34,6 @@ public class WallSpawner : MonoBehaviour
         else
         {
             StartCoroutine(Delay(Random.Range(2, 5)));
-
         }
 
     }

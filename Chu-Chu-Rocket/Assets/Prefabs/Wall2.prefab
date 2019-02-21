@@ -111,4 +111,4 @@ MonoBehaviour:
   tile: {fileID: 7374111577099914095, guid: 53b7fb2079df3457fb3c3cd1a2b093f6, type: 3}
   spacing: 0.1
   MaterialGhost: {fileID: 2100000, guid: 47157ee33f24246b7b6b8cf5fbd04658, type: 2}
-  MaterialSet: {fileID: 2100000, guid: 53b530ea1d8684e1f81912d6bc6ec57b, type: 2}
+  MaterialSet: {fileID: 2100000, guid: 18087d06530ad4bca8f0b709b51569bd, type: 2}

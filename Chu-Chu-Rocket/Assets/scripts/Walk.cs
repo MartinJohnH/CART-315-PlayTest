@@ -56,14 +56,14 @@ public class Walk : MonoBehaviour
             numEnteredRocket++;
             Destroy(gameObject);
         }
-        if (other.gameObject.tag == "wall1" && this.gameObject.tag == "mouse")
-        {
-            Destroy(other.gameObject);
-        }
-        if (other.gameObject.tag == "wall2" && this.gameObject.tag == "cat")
-        {
-            Destroy(other.gameObject);
-        }
+        //if (other.gameObject.tag == "wall1" && this.gameObject.tag == "mouse")
+        //{
+        //    Destroy(other.gameObject);
+        //}
+        //if (other.gameObject.tag == "wall2" && this.gameObject.tag == "cat")
+        //{
+        //    Destroy(other.gameObject);
+        //}
 
     } 
 }
