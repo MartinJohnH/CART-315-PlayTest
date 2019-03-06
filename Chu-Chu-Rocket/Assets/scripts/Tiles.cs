@@ -36,6 +36,11 @@ public class Tiles : MonoBehaviour
         int randomTile = Random.Range(0, (int)(gridX * gridY));
         return tilePosition2[randomTile];
     }
+    public Vector3 GetTilePosition(int tilePos)
+    {
+        return tilePosition2[tilePos];
+    }
+
 
     public Vector3 GetRandomTilePosition1()
     {

@@ -17,6 +17,8 @@ public class WallBehaviour : MonoBehaviour
 
     public static bool isWallSet = false;
     private bool isWallSet2 = false;
+
+    private int durability = 5;
     
     void Start()
     {
@@ -24,6 +26,7 @@ public class WallBehaviour : MonoBehaviour
         this.GetComponent<MeshRenderer>().material = MaterialGhost;
         isWallSet = false;
         isWallSet2 = false;
+        durability = 20;
     }
 
     // Update is called once per frame
@@ -52,6 +55,24 @@ public class WallBehaviour : MonoBehaviour
             this.GetComponent<BoxCollider>().enabled = true;
             this.GetComponent<MeshRenderer>().material = MaterialSet;
         }
+        if (durability <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "mouse" || other.gameObject.tag == "cat")
+        {
+            ReduceDurability();
+        }
+    }
+
+    public void ReduceDurability()
+    {
+        durability--;
+    }
+
 
 }

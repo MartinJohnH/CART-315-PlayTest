@@ -27,13 +27,13 @@ public class WallSpawner : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         if (WallBehaviour.isWallSet)
         {
-            Instantiate(wall1, tiles.GetRandomTilePosition1() + offsetZ, wall1.transform.rotation);
-            Instantiate(wall2, tiles.GetRandomTilePosition2() - offsetX, wall2.transform.rotation);
-            StartCoroutine(Delay(Random.Range(2, 5)));
+            Instantiate(wall1, tiles.GetTilePosition(57) + offsetZ, wall1.transform.rotation);
+            Instantiate(wall2, tiles.GetTilePosition(50) - offsetX, wall2.transform.rotation);
+            StartCoroutine(Delay(Random.Range(2, 4)));
         }
         else
         {
-            StartCoroutine(Delay(Random.Range(2, 5)));
+            StartCoroutine(Delay(Random.Range(2, 4)));
         }
 
     }
