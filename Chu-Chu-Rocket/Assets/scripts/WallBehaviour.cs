@@ -17,34 +17,36 @@ public class WallBehaviour : MonoBehaviour
 
     public static bool isWallSet = false;
     private bool isWallSet2 = false;
+    private int durability;
 
-    private int durability = 5;
-    
+    public Material[] wallMaterials;
+
+
     void Start()
     {
         this.GetComponent<BoxCollider>().enabled = false;
         this.GetComponent<MeshRenderer>().material = MaterialGhost;
         isWallSet = false;
         isWallSet2 = false;
-        durability = 20;
+        durability = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isWallSet2 && Input.GetButtonDown(moveUp))
+        if (!isWallSet2 && Input.GetButtonDown(moveUp) && transform.position.z <= 3.9f)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + tile.GetComponent<Renderer>().bounds.size.z + spacing);
         }
-        if (!isWallSet2 && Input.GetButtonDown(moveDown))
+        if (!isWallSet2 && Input.GetButtonDown(moveDown) && transform.position.z >= -2.8f)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - tile.GetComponent<Renderer>().bounds.size.z - spacing);
         }
-        if (!isWallSet2 && Input.GetButtonDown(moveLeft))
+        if (!isWallSet2 && Input.GetButtonDown(moveLeft) && transform.position.x >= -5.5f)
         {
             transform.position = new Vector3(transform.position.x - tile.GetComponent<Renderer>().bounds.size.z - spacing, transform.position.y, transform.position.z);
         }
-        if (!isWallSet2 && Input.GetButtonDown(moveRight))
+        if (!isWallSet2 && Input.GetButtonDown(moveRight) && transform.position.x <= 5.5f)
         {
             transform.position = new Vector3(transform.position.x + tile.GetComponent<Renderer>().bounds.size.z + spacing, transform.position.y, transform.position.z);
         }
@@ -53,9 +55,9 @@ public class WallBehaviour : MonoBehaviour
             isWallSet = true;
             isWallSet2 = true;
             this.GetComponent<BoxCollider>().enabled = true;
-            this.GetComponent<MeshRenderer>().material = MaterialSet;
+            this.GetComponent<MeshRenderer>().material = wallMaterials[durability];
         }
-        if (durability <= 0)
+        if (durability >= 14)
         {
             Destroy(gameObject);
         }
@@ -71,7 +73,11 @@ public class WallBehaviour : MonoBehaviour
 
     public void ReduceDurability()
     {
-        durability--;
+        durability++;
+        if (durability < 14)
+        {
+            this.GetComponent<MeshRenderer>().material = wallMaterials[durability];
+        }
     }
 
 

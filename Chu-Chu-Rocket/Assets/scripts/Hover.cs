@@ -7,11 +7,6 @@ public class Hover : MonoBehaviour
     private GameObject arrow;
     private bool isArrowEnabled = false;
 
-    void Start()
-    {
-       
-    }
-
     void OnMouseEnter()
     {
         transform.GetChild(0).gameObject.SetActive(true);

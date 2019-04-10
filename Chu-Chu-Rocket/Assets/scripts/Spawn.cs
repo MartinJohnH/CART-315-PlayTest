@@ -9,7 +9,7 @@ public class Spawn : MonoBehaviour
     public GameObject prefab;
     public static float gridX = 12f;
     public static float gridY = 9f;
-    private static float posY = 0.35f;
+    public float posY = 0.35f;
     private readonly float spacing = Tiles.spacing;
     private int numOfSpawnedObj = 0;
     List<GameObject> spawnedObjects = new List<GameObject>();

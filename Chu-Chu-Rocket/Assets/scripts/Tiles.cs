@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections.Generic;
 
 
 public class Tiles : MonoBehaviour
@@ -13,10 +12,7 @@ public class Tiles : MonoBehaviour
     public static float spacing = 1.1f;
     List<Vector3> tilePosition = new List<Vector3>();
     List<Vector3> tilePosition2 = new List<Vector3>();
-
-    private int counter1 = 0;
-    private int counter2 = 0;
-
+    
     void Awake()
     {
         for (int y = 0; y < gridY; y++)
@@ -30,49 +26,42 @@ public class Tiles : MonoBehaviour
             }
         }
     }
+  
 
     public Vector3 GetRandomTilePosition()
     {
         int randomTile = Random.Range(0, (int)(gridX * gridY));
+        Vector3 temp;
+        try{
+            temp = tilePosition2[randomTile];
+        }catch (System.ArgumentOutOfRangeException e)
+        {
+            return tilePosition2[50];
+        }
         return tilePosition2[randomTile];
     }
-    public Vector3 GetTilePosition(int tilePos)
+    public Vector3 GetTilePosition(int tileNumber)
     {
-        return tilePosition2[tilePos];
+        Vector3 temp;
+        try
+        {
+            temp = tilePosition2[tileNumber];
+        }
+        catch (System.ArgumentOutOfRangeException e)
+        {
+            return tilePosition2[50];
+        }
+        return tilePosition2[tileNumber];
     }
-
-
-    public Vector3 GetRandomTilePosition1()
+    public int GetTileNumber(Vector3 tilePos)
     {
-        if (counter1 == (int)((int)(gridX * gridY) - gridX))
+        for (int i=0; i< tilePosition2.Count; ++i)
         {
-            return new Vector3(0, -1, 0);
+            if (tilePosition2[i] == tilePos)
+            {
+                return i;
+            }
         }
-        int randomTile = Random.Range((int)gridX, (int)(gridX * gridY));
-        while (tilePosition[randomTile] == new Vector3(0, 0, 0))
-        {
-            randomTile = Random.Range((int)gridX, (int)(gridX * gridY));
-        }
-        Vector3 temp = tilePosition[randomTile];
-        tilePosition[randomTile] = new Vector3(0,0,0);
-        counter1++;
-        return temp;
-    }
-
-    public Vector3 GetRandomTilePosition2()
-    {
-        if (counter2 == (int)((int)(gridX * gridY) - gridY))
-        {
-            return new Vector3(0, -1, 0);
-        }
-        int randomTile = Random.Range(0, ((int)(gridX * gridY)));
-        while (randomTile % 12 == 0 || tilePosition[randomTile] == new Vector3(0, 0, 0))
-        {
-            randomTile = Random.Range(0, (int)(gridX * gridY));
-        }
-        Vector3 temp = tilePosition[randomTile];
-        tilePosition[randomTile] = new Vector3(0, 0, 0);
-        counter2++;
-        return temp;
+        return -1;
     }
 }

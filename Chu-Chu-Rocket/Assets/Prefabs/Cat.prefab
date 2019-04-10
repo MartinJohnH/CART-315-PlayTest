@@ -124,7 +124,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.15
   accelerateKey: right shift
-  wall: {fileID: 4946135678255666597, guid: 80e8a9ebddd704f269e5ee8687ba3b4c, type: 3}
 --- !u!1 &3890352192416581906
 GameObject:
   m_ObjectHideFlags: 0

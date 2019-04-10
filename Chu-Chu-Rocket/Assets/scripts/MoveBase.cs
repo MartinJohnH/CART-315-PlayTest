@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveBase : MonoBehaviour
 {
-    public Tiles tiles;
+    private Tiles tiles;
 
     void Awake()
     {
@@ -14,6 +14,9 @@ public class MoveBase : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        GetComponent<AudioSource>().Play();
         transform.position = tiles.GetRandomTilePosition();
+        transform.position += new Vector3(0, 0.33f, 0);
+        
     }
 }

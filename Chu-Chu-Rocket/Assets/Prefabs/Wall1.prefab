@@ -111,4 +111,19 @@ MonoBehaviour:
   tile: {fileID: 7374111577099914095, guid: 53b7fb2079df3457fb3c3cd1a2b093f6, type: 3}
   spacing: 0.1
   MaterialGhost: {fileID: 2100000, guid: 4ef4601b70fed4be9816faca42304ed7, type: 2}
-  MaterialSet: {fileID: 2100000, guid: 18087d06530ad4bca8f0b709b51569bd, type: 2}
+  MaterialSet: {fileID: 2100000, guid: 838a05b98c8b74380b77ec2bab57b344, type: 2}
+  wallMaterials:
+  - {fileID: 2100000, guid: 4c34a34ca15e84612bc09c725e2b6468, type: 2}
+  - {fileID: 2100000, guid: 6720fed0451214dc8b97cdacbe48c2b6, type: 2}
+  - {fileID: 2100000, guid: 9ece2459f8cec404a9d310f4e1305085, type: 2}
+  - {fileID: 2100000, guid: be8e3792186cd4e95b923a432f108632, type: 2}
+  - {fileID: 2100000, guid: e11aa9ab2859b47ea9bcfd723b15d3e3, type: 2}
+  - {fileID: 2100000, guid: afec83858a24648bca2032040cb12bae, type: 2}
+  - {fileID: 2100000, guid: 19d35ae95ce534571a5a70ca0ac4a440, type: 2}
+  - {fileID: 2100000, guid: 17f203d5722c549079aad6c19caa9789, type: 2}
+  - {fileID: 2100000, guid: 573dfa36f34d049e3967ca341fae7ede, type: 2}
+  - {fileID: 2100000, guid: 3981382dcff68479b9e7cea1098debdf, type: 2}
+  - {fileID: 2100000, guid: 663488e570516495bba34ef4668a32cb, type: 2}
+  - {fileID: 2100000, guid: 838a05b98c8b74380b77ec2bab57b344, type: 2}
+  - {fileID: 2100000, guid: 534fc20b53efc4415929115a143ca60b, type: 2}
+  - {fileID: 2100000, guid: 394c15f064a1f4db6bab949ff73402b6, type: 2}
